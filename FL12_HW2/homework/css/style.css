@@ -143,6 +143,14 @@
 }
 
 @media print {
+  *,
+  .tm-content-box,
+  .padding-medium,
+  .tm-main-content {
+    margin: 0;
+    padding: 0;
+  }
+
   nav,
   .tm-team-img,
   #about,
@@ -150,10 +158,6 @@
   section:last-of-type,
   .carousel-indicators {
     display: none;
-  }
-
-  @page {
-    margin: 0 2.3cm;
   }
 
   div {
@@ -192,15 +196,8 @@
     text-align: right;
   }
 
-  *,
-  .tm-content-box,
-  .padding-medium,
-  .tm-main-content {
-    margin: 0;
-    padding: 0;
-  }
-
+  footer,
   section {
-    padding-top: 20px;
+    padding: 20px 0 0 0;
   }
 }
