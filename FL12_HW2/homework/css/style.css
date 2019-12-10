@@ -1,3 +1,67 @@
+@media print {
+  *,
+  .tm-content-box,
+  .padding-medium,
+  .tm-main-content {
+    margin: 0;
+    padding: 0;
+  }
+
+  nav,
+  .tm-team-img,
+  #about,
+  .gallery-container,
+  section:last-of-type,
+  .carousel-indicators {
+    display: none;
+  }
+
+  @page {
+    margin: 0 40px;
+  }
+
+  div {
+    min-width: 100%;
+  }
+
+  h2 {
+    text-align: center;
+    color: lightskyblue;
+    background: none;
+    text-transform: uppercase;
+    font-weight: 300 !important;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  .blocks .tm-team-description-container p:last-child {
+    letter-spacing: 5px;
+    word-spacing: 10px;
+    font-style: italic;
+  }
+
+  section.heading.tm-content-box {
+    margin: 0 auto;
+    max-width: 50%;
+  }
+
+  li {
+    list-style: none;
+    text-align: left;
+  }
+
+  li:nth-child(2n + 1) {
+    text-align: right;
+  }
+
+  footer,
+  section {
+    padding: 20px 40px 0;
+  }
+}
+
 @media screen {
   .tm-main-nav li a:hover {
     background-color: lightskyblue;
@@ -116,7 +180,7 @@
   .contact-form textarea {
     border: 1px solid lightskyblue;
     background: url("../img/email-icon.png") no-repeat;
-    background-position: 99% 95%;
+    background-position: right 10px bottom 10px;
     background-size: 3%;
   }
 
@@ -139,69 +203,5 @@
     border: 22px solid transparent;
     border-top: 22px solid lightskyblue;
     border-left: 22px solid lightskyblue;
-  }
-}
-
-@media print {
-  *,
-  .tm-content-box,
-  .padding-medium,
-  .tm-main-content {
-    margin: 0;
-    padding: 0;
-  }
-
-  nav,
-  .tm-team-img,
-  #about,
-  .gallery-container,
-  section:last-of-type,
-  .carousel-indicators {
-    display: none;
-  }
-
-  @page {
-    margin: 0 40px;
-  }
-
-  div {
-    min-width: 100%;
-  }
-
-  h2 {
-    text-align: center;
-    color: lightskyblue;
-    background: none;
-    text-transform: uppercase;
-    font-weight: 300 !important;
-  }
-
-  p {
-    text-align: center;
-  }
-
-  .blocks .tm-team-description-container p:last-child {
-    letter-spacing: 5px;
-    word-spacing: 10px;
-    font-style: italic;
-  }
-
-  section.heading.tm-content-box {
-    margin: 0 auto;
-    max-width: 50%;
-  }
-
-  li {
-    list-style: none;
-    text-align: left;
-  }
-
-  li:nth-child(2n + 1) {
-    text-align: right;
-  }
-
-  footer,
-  section {
-    padding: 20px 40px 0;
   }
 }
