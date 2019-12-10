@@ -26,6 +26,7 @@
 
   h2 {
     text-align: center;
+    background-color: transparent;
     color: lightskyblue;
     background: none;
     text-transform: uppercase;
@@ -92,11 +93,11 @@
     }
   }
 
-  section > .tm-content-box.flex-2-col {
+  .tm-content-box.flex-2-col {
     display: flex;
   }
 
-  section > .tm-content-box.flex-2-col div:first-child {
+  .tm-content-box.flex-2-col div:first-child {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -123,6 +124,7 @@
   }
 
   .heading.tm-content-box h2 {
+    background-color: transparent;
     color: lightskyblue;
   }
 
@@ -133,12 +135,14 @@
   .heading.tm-content-box li a:hover::before {
     content: ">";
     display: inline-block;
+    background-color: transparent;
     color: black;
   }
 
   .text::after {
     content: "New";
     display: inline-block;
+    background-color: transparent;
     color: red;
     font-variant: small-caps;
     font-weight: bold;
@@ -189,7 +193,7 @@
     background-color: #fff;
     color: lightskyblue;
     border: 1px solid lightskyblue;
-    padding: 13px 20px;
+    padding: 15px 20px;
   }
 
   .tm-main-nav,
