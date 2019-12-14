@@ -1,0 +1,343 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $mainFont;
+  background: $backgroundColor;
+}
+
+$font-sizes: ("small": 1rem);
+
+@mixin button {
+  padding: 0.9rem 2.7rem;
+  font-size: map-get($font-sizes, "small");
+  font-weight: 600;
+  color: #fff;
+  background: $backgroundButton;
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+
+@mixin link {
+  text-decoration: underline;
+}
+
+@function remy($pxsize) {
+  @return ($pxsize/16) + rem;
+}
+
+@mixin emphasis {
+  content: " ";
+  position: absolute;
+  display: inline-block;
+  background: $emphasisColor;
+  z-index: -1;
+}
+
+.header {
+  background-image: $backgroundImage;
+  background-size: 100%;
+  background-position-y: -270px;
+  border-bottom-right-radius: 40%;
+
+  &-wrap {
+    margin: 0 auto;
+    width: remy(1537);
+    padding-top: 1.2rem;
+    z-index: 1;
+
+    .landing-logo {
+      display: flex;
+
+      img {
+        width: 45px;
+        height: 45px;
+      }
+
+      p {
+        position: relative;
+        display: flex;
+        top: 0.2rem;
+        justify-content: center;
+        padding-left: 0.9rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: $fontColor;
+        line-height: 1.5rem;
+      }
+
+      span {
+        position: absolute;
+        top: 1.4rem;
+        font-size: 0.6rem;
+        text-align: center;
+      }
+    }
+
+    div:last-child {
+      padding-top: 3.9rem;
+      padding-bottom: 11rem;
+      font-family: "Source Sans Pro", sans-serif;
+
+      button {
+        @include button;
+      }
+
+      a {
+        @include link;
+        margin-left: 9.2rem;
+        font-weight: 600;
+        font-size: 1.25rem;
+        color: #fff;
+      }
+    }
+  }
+
+  &_heading {
+    width: 35rem;
+    position: relative;
+    font-family: "Source Sans Pro", sans-serif;
+    padding-top: 4.5rem;
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 4.6rem;
+    color: $fontColor;
+    z-index: 1;
+
+    &::after {
+      @include emphasis;
+      top: 10.4rem;
+      left: 0rem;
+      width: 18.9rem;
+      height: 3.1rem;
+    }
+  }
+
+  &_text {
+    padding-top: 2.1rem;
+    line-height: 1.5rem;
+    word-spacing: 0.08rem;
+    color: $fontColor;
+    white-space: pre-line;
+  }
+}
+
+.section {
+  z-index: 1;
+
+  &_text {
+    position: relative;
+    font-family: "Source Sans Pro", sans-serif;
+    padding-top: 2.28rem;
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: $fontColor;
+    text-align: center;
+
+    &::after {
+      @include emphasis;
+      top: 1.9rem;
+      left: 59.9rem;
+      width: 11.8rem;
+      height: 3.1rem;
+    }
+  }
+
+  &_card_wrap {
+    width: 1115px;
+    margin: 0 auto;
+    margin-top: 2.3rem;
+  }
+
+  @mixin card {
+    display: flex;
+    padding: 1.25rem;
+    background: $backgroundCardColor;
+    border-radius: 0.4rem;
+    margin-bottom: 1.5rem;
+
+    img[alt="experts"] {
+      width: 27rem;
+      border-radius: 0.4rem;
+    }
+
+    img[alt="content formats"] {
+      width: 26rem;
+      border-radius: 0.4rem;
+    }
+
+    img[alt="certificate"] {
+      width: 28.7rem;
+      border-radius: 0.4rem;
+    }
+
+    .section_card_right_container {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      flex: 6;
+      padding: 0 5.5rem;
+      color: #fff;
+    }
+
+    .section_card_heading {
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      padding-top: 3rem;
+    }
+
+    .section_card_text {
+      padding-top: 2.5rem;
+      text-align: justify;
+      color: #c0c3c4;
+      line-height: 1.5rem;
+      word-spacing: 1px;
+    }
+
+    .section_link {
+      @include link;
+      font-family: "Source Sans Pro", sans-serif;
+      color: #c0c3c4;
+      padding-top: 1.3rem;
+    }
+  }
+
+  &_card:nth-child(1) {
+    @include card;
+  }
+
+  &_card:nth-child(2) {
+    @include card;
+
+    .section_card_right_container{
+      padding: 0 5.6rem;
+    }
+    .section_card_heading {
+      padding-top: 2.9rem;
+    }
+    .section_card_text {
+      padding-top: 2.05rem;
+    }
+
+    .section_link {
+      padding-top: 1.15rem;
+    }
+  }
+
+  &_card:nth-child(3) {
+    @include card;
+
+    .section_card_right_container{
+      padding: 0 5.2rem;
+    }
+
+    .section_card_heading {
+      padding-top: 3.7rem;
+    }
+    .section_card_text {
+      padding-top: 3.9rem;
+    }
+
+    .section_link {
+      padding-top: 1.9rem;
+    }
+  }
+
+  &_banner {
+    position: relative;
+    top: 6.5rem;
+    display: flex;
+    background: $backgroundBanner;
+    padding: 0 10.1rem;
+    justify-content: space-between;
+    width: 1200px;
+    height: 9rem;
+    margin: 2.1rem auto;
+    border-radius: 0.4rem;
+    z-index: 1;
+
+    &_heading {
+      font-family: "Source Sans Pro", sans-serif;
+      position: relative;
+      padding-top: 1.5rem;
+      font-weight: bold;
+      font-size: 1.9rem;
+      color: $fontColor;
+
+      &::after {
+        @include emphasis;
+        top: 0.75rem;
+        left: 7.6rem;
+        width: 4rem;
+        height: 3.1rem;
+      }
+    }
+
+    &_text {
+      @extend .section_card_text;
+      padding-top: 1rem;
+      word-spacing: remy(1.4);
+      color: #c0c3c4;
+    }
+
+    &_button {
+      margin: 3rem 0;
+      @include button;
+    }
+  }
+}
+
+.footer {
+  background: $backgroundCardColor;
+  color: #c0c3ce;
+
+  &-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7.7rem 0 3rem;
+    margin: 0 auto;
+    width: remy(1537);
+  }
+
+  &_logo {
+    display: flex;
+
+    img {
+      width: 45px;
+      height: 45px;
+    }
+
+    p {
+      position: relative;
+      display: flex;
+      top: 0.2rem;
+      justify-content: center;
+      padding-left: 1rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #c0c3ce;
+      line-height: 1.5rem;
+    }
+
+    span {
+      position: absolute;
+      top: 1.4rem;
+      font-size: 0.6rem;
+      text-align: center;
+    }
+  }
+
+  &_text {
+    display: inline-block;
+    padding-top: 4px;
+    width: 19.4rem;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
