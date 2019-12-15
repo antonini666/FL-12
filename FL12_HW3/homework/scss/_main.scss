@@ -20,6 +20,8 @@ body {
   cursor: pointer;
 }
 
+$font-sizes: ("small": 1rem);
+
 @mixin link {
   text-decoration: underline;
 }
