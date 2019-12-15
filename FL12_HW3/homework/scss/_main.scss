@@ -9,8 +9,6 @@ body {
   background: $backgroundColor;
 }
 
-$font-sizes: ("small": 1rem);
-
 @mixin button {
   padding: 0.9rem 2.7rem;
   font-size: map-get($font-sizes, "small");
