@@ -1,3 +1,3 @@
 # FL-12
 
-Front-end training
+Epam Front-end training
