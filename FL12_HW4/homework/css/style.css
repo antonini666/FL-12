@@ -32,13 +32,13 @@ hr {
     height: 85px;
     align-items: center;
     justify-content: space-around;
-    box-shadow: 0 0 10px #555;
+    box-shadow: 0 0 10px #777;
 }
 
 .header-nav .title {
     font-size: 1.3em;
     text-transform: uppercase;
-    color: #555;
+    color: #777;
 }
 
 .nav-list {
@@ -115,7 +115,7 @@ hr {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 400px;
+    width: 360px;
 }
 
 .section .about img {
