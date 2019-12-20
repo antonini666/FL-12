@@ -133,12 +133,16 @@ a {
   height: inherit;
 }
 
-.post:hover img {
+.post img:hover {
+  opacity: 0.7;
+}
+
+.post .text:hover .title{
   opacity: 0.7;
 }
 
 .main-content .text {
-  margin: 50px;
+  padding: 50px;
 }
 
 .main-content .post:nth-child(odd) .date {
@@ -313,7 +317,7 @@ a {
   }
 
   .main-content .text {
-    margin: 30px;
+    padding: 30px;
   }
 
   .main-content .text .title {
