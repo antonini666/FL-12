@@ -137,7 +137,7 @@ a {
   opacity: 0.7;
 }
 
-.post .text:hover .title{
+.post .text:hover .title {
   opacity: 0.7;
 }
 
@@ -177,7 +177,6 @@ a {
   font-weight: 100;
   line-height: 55px;
   margin: 0 0 15px 22px;
-  word-break: break-word;
 }
 
 .main-content .post:nth-child(odd) .text .title {
@@ -185,7 +184,6 @@ a {
   font-weight: 100;
   line-height: 55px;
   margin: 0 22px 15px 0;
-  word-break: break-word;
 }
 
 .main-content .text .desc {
@@ -321,7 +319,7 @@ a {
   }
 
   .main-content .text .title {
-      font-size: 7vw !important;
+    font-size: 7vw !important;
   }
 
   .main-content .post .date {
@@ -370,7 +368,7 @@ a {
 
   .main-content .text .title {
     font-size: 10vw !important;
-}
+  }
 
   .main .aside {
     width: 100%;
