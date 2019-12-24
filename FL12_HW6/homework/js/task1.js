@@ -1,10 +1,12 @@
-let a = parseInt(prompt('Input value a'));
-let b = parseInt(prompt('Input value b'));
-let c = parseInt(prompt('Input value c'));
+let a = parseFloat(prompt('Input value a'));
+let b = parseFloat(prompt('Input value b'));
+let c = parseFloat(prompt('Input value c'));
 let d;
 let x;
 let x1;
 let x2;
+
+console.log(a, b, c);
 
 if (isNaN(a) || isNaN(b) || isNaN(c) || a === 0) {
   console.log('Invalid input data');
