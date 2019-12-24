@@ -2,8 +2,8 @@ let a = prompt('Enter value a');
 let b = prompt('Enter value b');
 let c = prompt('Enter value c');
 let d, x, x1, x2;
-let two = 2;
-let four = 4;
+const two = 2;
+const four = 4;
 
 if (
   a === null ||
