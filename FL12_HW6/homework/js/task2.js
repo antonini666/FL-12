@@ -1,8 +1,15 @@
-let a = parseInt(prompt('Input value a'));
-let b = parseInt(prompt('Input value b'));
-let c = parseInt(prompt('Input value c'));
+let a = Number(prompt('Input value a'));
+let b = Number(prompt('Input value b'));
+let c = Number(prompt('Input value c'));
 
-if (isNaN(a) || isNaN(b) || isNaN(c)) {
+if (
+  isNaN(a) ||
+  isNaN(b) ||
+  isNaN(c) ||
+  !Number.isInteger(a) ||
+  !Number.isInteger(b) ||
+  !Number.isInteger(c)
+) {
   alert('input values should be ONLY numbers');
 } else if (a <= 0 || b <= 0 || c <= 0) {
   alert('A triangle must have 3 sides with a positive definite length');
