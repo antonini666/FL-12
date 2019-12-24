@@ -6,8 +6,6 @@ let x;
 let x1;
 let x2;
 
-console.log(a, b, c);
-
 if (isNaN(a) || isNaN(b) || isNaN(c) || a === 0) {
   console.log('Invalid input data');
 } else {
