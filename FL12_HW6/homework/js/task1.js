@@ -1,13 +1,26 @@
-let a = parseFloat(prompt('Input value a'));
-let b = parseFloat(prompt('Input value b'));
-let c = parseFloat(prompt('Input value c'));
+let a = prompt('Input value a');
+let b = prompt('Input value b');
+let c = prompt('Input value c');
 let d, x, x1, x2;
 let two = 2;
 let four = 4;
 
-if (isNaN(a) || isNaN(b) || isNaN(c) || a === 0) {
+if (
+  a === null ||
+  b === null ||
+  c === null ||
+  isNaN(+a) ||
+  isNaN(+b) ||
+  isNaN(+c) ||
+  isNaN(parseFloat(a)) ||
+  isNaN(parseFloat(b)) ||
+  isNaN(parseFloat(c))
+) {
   console.log('Invalid input data');
 } else {
+  a = parseFloat(a);
+  a = parseFloat(b);
+  a = parseFloat(c);
   d = Math.pow(b, two) - four * a * c;
   if (d === 0) {
     x = -b / (two * a);
