@@ -14,7 +14,8 @@ if (
   isNaN(+c) ||
   isNaN(parseFloat(a)) ||
   isNaN(parseFloat(b)) ||
-  isNaN(parseFloat(c))
+  isNaN(parseFloat(c)) ||
+  +a === 0
 ) {
   console.log('Invalid input data');
 } else {
