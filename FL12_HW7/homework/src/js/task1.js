@@ -9,7 +9,7 @@ if (!userEmail) {
   alert('Canceled');
 } else if (userEmail.trim().length < five) {
   alert("I don't know any emails having name length less than 5 symbols");
-} else if (userEmail.trim().toLowerCase() === 'user@gmail.com') {
+} else if (userEmail.trim() === 'user@gmail.com') {
   userPassword = prompt('Enter your password:');
   if (!userPassword) {
     alert('Canceled');
@@ -19,7 +19,7 @@ if (!userEmail) {
   } else {
     alert('Wrong password');
   }
-} else if (userEmail.trim().toLowerCase() === 'admin@gmail.com') {
+} else if (userEmail.trim() === 'admin@gmail.com') {
   userPassword = prompt('Enter your password:');
   if (!userPassword) {
     alert('Canceled');

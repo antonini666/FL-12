@@ -10,12 +10,15 @@ if (startGame) {
   while (conter) {
     let randomNumber = Math.round(Math.random() * numberPocket);
     while (effort < 3) {
-      userNumber = +prompt(`
+      userNumber = prompt(`
         Choose a roulette pocket number from 0 to ${numberPocket}
         Attempts left: ${attempts}
         Total prize: ${userPrize}$
         Possible prize on ccurent attemtpt ${prize[effort]}$
         `);
+      if (userNumber !== null && userNumber !== '') {
+        userNumber = +userNumber;
+      }
       if (userNumber === randomNumber) {
         userPrize += prize[effort];
         if (
@@ -48,6 +51,7 @@ if (startGame) {
             effort = 0;
             attempts = 3;
             userPrize = 0;
+            break;
           } else {
             conter = false;
           }
