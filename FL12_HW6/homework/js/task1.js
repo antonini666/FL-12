@@ -1,21 +1,34 @@
-let a = parseInt(prompt('Input value a'));
-let b = parseInt(prompt('Input value b'));
-let c = parseInt(prompt('Input value c'));
-let d;
-let x;
-let x1;
-let x2;
+let a = prompt('Enter value a');
+let b = prompt('Enter value b');
+let c = prompt('Enter value c');
+let d, x, x1, x2;
+const two = 2;
+const four = 4;
 
-if (isNaN(a) || isNaN(b) || isNaN(c) || a === 0) {
+if (
+  a === null ||
+  b === null ||
+  c === null ||
+  isNaN(+a) ||
+  isNaN(+b) ||
+  isNaN(+c) ||
+  isNaN(parseFloat(a)) ||
+  isNaN(parseFloat(b)) ||
+  isNaN(parseFloat(c)) ||
+  +a === 0
+) {
   console.log('Invalid input data');
 } else {
-  d = Math.pow(b, 2) - 4 * a * c;
+  a = parseFloat(a);
+  a = parseFloat(b);
+  a = parseFloat(c);
+  d = Math.pow(b, two) - four * a * c;
   if (d === 0) {
-    x = -b / (2 * a);
+    x = -b / (two * a);
     console.log(`x = ${x}`);
   } else if (d > 0) {
-    x1 = Math.round((-b + Math.sqrt(d)) / (2 * a));
-    x2 = Math.round((-b - Math.sqrt(d)) / (2 * a));
+    x1 = Math.round((-b + Math.sqrt(d)) / (two * a));
+    x2 = Math.round((-b - Math.sqrt(d)) / (two * a));
     console.log(`x1 = ${x1}`, `x2 = ${x2}`);
   } else if (d < 0) {
     console.log('no solution');
