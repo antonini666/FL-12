@@ -3,11 +3,8 @@ function isLeapYear(value) {
   let isLeap = new Date(year, 1, 29).getMonth() === 1;
   if (isNaN(year)) {
     return "Invalid Date";
-  } else if (isLeap) {
-    return `${year} is a leap year`;
-  } else {
-    return `${year} is not a leap year`;
   }
+  return isLeap ? `${year} is a leap year` : `${year} is not a leap year`;
 }
 
-isLeapYear(1213131313);
+isLeapYear("2020-01-01 00:00:00");
