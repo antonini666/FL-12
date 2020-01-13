@@ -59,6 +59,13 @@ const getPastDay = (date, num) => {
 };
 
 const formatDate = date => {
-  return `${date.getFullYear()}/${date.getMonth() +
-    1}/${date.getDate()} ${date.getHours()}:${date.getMinutes()}`;
+  const minTime = 10;
+  let year = date.getFullYear();
+  let month = date.getMonth() + 1;
+  let day = date.getDate();
+  let hours =
+    date.getHours() < minTime ? '0' + date.getHours() : date.getHours();
+  let minutes =
+    date.getMinutes() < minTime ? '0' + date.getMinutes() : date.getMinutes();
+  return `${year}/${month}/${day} ${hours}:${minutes}`;
 };
