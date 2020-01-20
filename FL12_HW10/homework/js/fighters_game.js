@@ -1,74 +1,92 @@
-class Fighter {
-  constructor({ name, damage, hp, strength, agility }) {
-    this.name = name;
-    this.damage = damage;
-    this.hp = hp;
-    this.health = hp;
-    this.strength = strength;
-    this.agility = agility;
-    this.wins = 0;
-    this.losses = 0;
-  }
-  getName() {
-    return this.name;
-  }
-  getDamage() {
-    return this.damage;
-  }
-  getStrength() {
-    return this.strength;
-  }
-  getAgility() {
-    return this.agility;
-  }
-  getHealth() {
-    return this.hp;
-  }
-  logCombatHistory() {
-    console.log(`Name: ${this.getName()}, Wins: ${this.wins}`);
-  }
-  heal(healthPoints) {
-    this.hp = Math.min(this.hp, this.health + healthPoints);
-  }
-  dealDamage(damage) {
-    this.health = Math.max(0, this.health - damage);
-  }
-  addWin() {
-    return this.wins++;
-  }
-  addLoss() {
-    return this.losses++;
-  }
-  attack(def) {
-    const MAX = 100;
-    if (
-      Math.floor(Math.random() * MAX) <=
-      MAX - def.getAgility() - def.getStrength()
-    ) {
-      def.dealDamage(this.getDamage());
-      console.log(
-        `${this.getName()} makes ${this.getDamage()} damage to ${def.getName()}`
-      );
-    } else {
-      console.log(`${this.getName()} attac missed`);
+function Fighter(person) {
+  person.hpPoints = person.hp;
+  person.wins = 0;
+  person.loss = 0;
+
+  return {
+    getName() {
+      return person.name;
+    },
+    getDamage() {
+      return person.damage;
+    },
+    getStrength() {
+      return person.strength;
+    },
+    getAgility() {
+      return person.agility;
+    },
+    getHealth() {
+      return person.hp;
+    },
+    heal(val) {
+      val + person.hp <= person.hpPoints
+        ? person.hp += val
+        : person.hp = person.hpPoints;
+    },
+    attack(defender) {
+      const MAX = 100;
+      if (
+        Math.round(Math.random() * MAX) <=
+        MAX - defender.getStrength() - defender.getAgility()
+      ) {
+        defender.dealDamage(this.getDamage());
+        console.log(
+          `${this.getName()} makes ${this.getDamage()} damage to ${defender.getName()}`
+        );
+      } else {
+        console.log(`${this.getName()} attack missed`);
+      }
+    },
+    logCombatHistory() {
+      return `Name: ${person.name}, Wins: ${person.wins}, loss: ${person.loss}`;
+    },
+
+    dealDamage(dmg) {
+      person.hp - dmg >= 0 ? person.hp -= dmg : person.hp = 0;
+    },
+    addWin() {
+      person.wins++;
+    },
+    addLoss() {
+      person.loss++;
     }
-  }
+  };
 }
 
 const myFighter = new Fighter({
-  name: 'Maximus',
+  name: 'Rower',
   damage: 20,
   hp: 100,
-  strength: 20,
-  agility: 15
+  strength: 30,
+  agility: 25
 });
 
 const myFighter2 = new Fighter({
-  name: 'Commodus',
+  name: 'Oarsman',
   damage: 25,
-  hp: 90,
-  strength: 25,
-  agility: 20
+  hp: 100,
+  strength: 15,
+  agility: 30
 });
 
-console.log(myFighter.attack(myFighter2));
+const battle = (...fighters) => {
+  for (let fighter of fighters) {
+    if (!fighter.getHealth() === 0) {
+      console.log(`${fighter.getName()} is dead and can't fight`);
+      return;
+    }
+  }
+
+  let fighter = 0;
+
+  while (fighters[fighter].getHealth()) {
+    fighters[fighter].attack(fighters[1 - fighter]);
+    fighter = 1 - fighter;
+  }
+  console.log(`${fighters[1 - fighter].getName()} has won!`);
+  fighters[1 - fighter].addWin();
+  fighters[fighter].addLoss();
+};
+
+battle(myFighter, myFighter2);
