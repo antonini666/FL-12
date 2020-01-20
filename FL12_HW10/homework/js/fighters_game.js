@@ -19,9 +19,9 @@ function Fighter(person) {
     getHealth() {
       return person.hp;
     },
-    heal(val) {
-      val + person.hp <= person.hpPoints
-        ? person.hp += val
+    heal(amountHealt) {
+      amountHealt + person.hp <= person.hpPoints
+        ? person.hp += amountHealt
         : person.hp = person.hpPoints;
     },
     attack(defender) {
