@@ -4,22 +4,12 @@ function Fighter(person) {
   person.loss = 0;
 
   return {
-    getName() {
-      return person.name;
-    },
-    getDamage() {
-      return person.damage;
-    },
-    getStrength() {
-      return person.strength;
-    },
-    getAgility() {
-      return person.agility;
-    },
-    getHealth() {
-      return person.hp;
-    },
-    heal(amountHealt) {
+    getName: () => person.name,
+    getDamage: () => person.damage,
+    getStrength: () => person.strength,
+    getAgility: () => person.agility,
+    getHealth: () => person.hp,
+    heal: amountHealt => {
       amountHealt + person.hp <= person.hpPoints
         ? person.hp += amountHealt
         : person.hp = person.hpPoints;
@@ -38,19 +28,13 @@ function Fighter(person) {
         console.log(`${this.getName()} attack missed`);
       }
     },
-    logCombatHistory() {
-      return `Name: ${person.name}, Wins: ${person.wins}, loss: ${person.loss}`;
-    },
-
-    dealDamage(dmg) {
+    logCombatHistory: () =>
+      `Name: ${person.name}, Wins: ${person.wins}, loss: ${person.loss}`,
+    dealDamage: dmg => {
       person.hp - dmg >= 0 ? person.hp -= dmg : person.hp = 0;
     },
-    addWin() {
-      person.wins++;
-    },
-    addLoss() {
-      person.loss++;
-    }
+    addWin: () => person.wins++,
+    addLoss: () => person.loss++
   };
 }
 
@@ -84,7 +68,9 @@ const battle = (...fighters) => {
     fighters[fighter].attack(fighters[1 - fighter]);
     fighter = 1 - fighter;
   }
+
   console.log(`${fighters[1 - fighter].getName()} has won!`);
+
   fighters[1 - fighter].addWin();
   fighters[fighter].addLoss();
 };
