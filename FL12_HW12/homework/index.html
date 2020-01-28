@@ -1,13 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Homework 12 - Simple TODO List</title>
-  <link rel="stylesheet" href="./assets/styles.css">
-</head>
-<body>
-  <div id="root"></div>
 
-  <script src="./src/app.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Homework 12 - Simple TODO List</title>
+    <link rel="stylesheet" href="./assets/styles.css">
+  </head>
+
+  <body>
+    <div id="root">
+
+      <div class="main-page">
+        <div class="main-page__header">
+          <h2>Main Page</h2>
+          <button class="add-btn">ADD TERMS</button>
+        </div>
+        <div class="main-page__list">
+          <div class="main-page__items">
+          </div>
+        </div>
+      </div>
+
+      <div class="add-page hide">
+        <h2>Add terms</h2>
+        <div class="form-add">
+          <input class="add-name" type="text" placeholder="Name">
+          <input class="add-term" type="text" placeholder="Add terms">
+        </div>
+        <div class="add-page__buttons">
+          <button class="add-page__save">Save changes</button>
+          <button class="add-page__cancel">Cancel</button>
+        </div>
+      </div>
+
+      <div class="modify-page hide">
+        <h2>Modify Terms</h2>
+        <div class="form-modify">
+          <input class="modify-name" type="text" placeholder="Name">
+          <input class="modify-term" type="text" placeholder="Add terms">
+        </div>
+        <div class="modify-page__buttons">
+          <button class="modify-page__save">Save changes</button>
+          <button class="modify-page__cancel">Cancel</button>
+        </div>
+      </div>
+
+
+    </div>
+
+    <script src="./src/app.js"></script>
+  </body>
+
 </html>
